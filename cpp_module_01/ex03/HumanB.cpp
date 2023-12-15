@@ -10,4 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "HumanB.hpp"
 
+HumanB::HumanB(const std::string& humanName)
+    : name(humanName) {};
+    //: name(humanName), weapon(nullptr) {};
+
+void    HumanB::setWeapon(const Weapon& newWeapon) {
+    weapon = new Weapon(newWeapon.getType());
+}
+
+void    HumanB::attack() const {
+    if (weapon) {
+        std::cout << name << " attacks with thier " << weapon->getType() << std::endl;
+    } //else {
+        //std::cout << name << "is unarmed and cannot attack." << std::endl;
+    //}
+}

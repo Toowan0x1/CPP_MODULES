@@ -10,10 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include 
+#include "Weapon.hpp"
 
-int main(void)
-{
-    //
-    return 0;
+Weapon::Weapon(const std::string& weaponType)
+    : type(weaponType) {};
+
+Weapon::~Weapon() {
+    // Any necessary cleanup for the Weapon class goes here
 }
+
+const std::string&  Weapon::getType(void) const {
+    return this->type; //this
+};
+
+void                Weapon::setType(const std::string& newType) {
+    this->type = newType; //this
+};

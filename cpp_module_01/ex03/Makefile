@@ -15,7 +15,7 @@ CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 LDFLAGS =
 
 SRC_DIR = .
-TARGET = HUAU
+TARGET = Attack
 
 SRC = $(wildcard $(SRC_DIR)/*.cpp)
 OBJ = $(patsubst $(SRC_DIR)/%.cpp,%.o,$(SRC))
