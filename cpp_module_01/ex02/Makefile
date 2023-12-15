@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: oel-houm <oel-houm@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/14 04:29:57 by oel-houm          #+#    #+#              #
-#    Updated: 2023/12/14 04:29:58 by oel-houm         ###   ########.fr        #
+#    Created: 2023/12/14 05:09:23 by oel-houm          #+#    #+#              #
+#    Updated: 2023/12/14 05:09:24 by oel-houm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 LDFLAGS =
 
 SRC_DIR = .
-TARGET = Account
+TARGET = Brain
 
 SRC = $(wildcard $(SRC_DIR)/*.cpp)
 OBJ = $(patsubst $(SRC_DIR)/%.cpp,%.o,$(SRC))
