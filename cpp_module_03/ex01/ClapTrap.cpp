@@ -12,29 +12,21 @@
 
 #include "ClapTrap.hpp"
 
-// Default Constructor
 ClapTrap::ClapTrap() : _name("Default"), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
 	std::cout << "ClapTrap default constructor called for " << _name << std::endl;
 }
 
-// Constructor with parameters
-ClapTrap::ClapTrap(const std::string& newName): _name(newName), _hitPoints(10), _energyPoints(10), attackDamage(0) {
+// Constructor with parameters // it was a const std::string& newName ???
+ClapTrap::ClapTrap(const std::string newName) : _name(newName), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
 	std::cout << "ClapTrap constructor called for " << _name << std::endl;
 }
 
-// Copy constructor
-/* ClapTrap::ClapTrap(const ClapTrap &rhs)
-{
-    *this = rhs;
-    std::cout << "ClapTrap copy constructor called" << std::endl;
-    return;
-} */
 ClapTrap::ClapTrap(const ClapTrap& other) : _name(other._name + "_copy"), _hitPoints(other._hitPoints), _energyPoints(other._hitPoints), _attackDamage(other._attackDamage) {
 	std::cout << "ClapTrap copy constructor called for " << _name << std::endl;
+	// return; fix
 }
 
-// Copy assignment operator
-ClapTrap& ClapTrap::operator(const ClapTrap& other) {
+ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
 	if (this != &other) {
 		_name = other._name;
 		_hitPoints = other._hitPoints;
@@ -69,7 +61,7 @@ void	ClapTrap::attack(const std::string& target) {
 		std::cout << "ClapTrap " << _name << "is out of energy!." << std::endl;
 		return;
 	}
-	std::cout << "ClapTrap " << _name << "attacks " << _target << ", causing " << _attackDamage << "points of damage!" << std::endl;
+	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
 	_energyPoints -= 1;
 }
 
@@ -78,7 +70,7 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 		std::cout << "ClapTrap " << _name << "is dead!" << std::endl;
 		return;
 	}
-	std::cout << "ClapTrap " << _name << "takes " << amount << " damage!" << std::endl;
+	std::cout << "ClapTrap " << _name << " takes " << amount << " damage!" << std::endl;
 	_hitPoints -= amount;
 }
 
