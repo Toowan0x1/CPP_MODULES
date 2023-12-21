@@ -15,28 +15,16 @@
 int main(void) {
     PhoneBook   phonebook;
 
-    /*
-    for (int i = 0; i < 8; ++i) {
+    /* for (int i = 0; i < 8; ++i) {
         std::string fname = "omar";
         std::string lname = "elhoumadi";
-        std::string nickname ="0m4r";
-        std::string phone = "06xxxx";
-        std::string secret = "secret";
+        std::string nickname ="toowan";
+        std::string phone = "212";
+        std::string secret = "no_secret";
         Contact contact(fname, lname, nickname, phone, secret);
         phonebook.addContact(contact);
-    }
-    */
-    /**/for (int i = 0; i < 7; ++i) {
-        std::string fname = "contact";
-        std::string lname = "lname";
-        std::string nickname = "nickname";
-        std::string phone = "phone";
-        std::string secret = "secret";
-        Contact contact(fname, lname, nickname, phone, secret);
-        phonebook.addContact(contact);
-    }
+    } */
     std::string command;
-    //while (command != "EXIT") {
     while (command.compare("EXIT"))
     {
         std::cout << "Enter command (ADD, SEARCH, EXIT): ";
@@ -65,19 +53,3 @@ int main(void) {
     }
     return (0);
 }
-
-/*
-Phonebook::Phonebook( args )
-{
-}
-
-Phonebook::~Phonebook()
-{
-}
-
-
-
-// check headr & includes 
-// clang++ -o phone main.cpp
-// protect invalid input in "Enter index to display contact details: {input}"
-*/

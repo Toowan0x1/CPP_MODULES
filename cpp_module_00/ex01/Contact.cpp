@@ -12,10 +12,42 @@
 
 #include "Contact.hpp"
 
+Contact::Contact(const std::string& fname, const std::string& lname, const std::string& nickname, const std::string& phone, const std::string& secret)
+    : _firstName(fname), _lastName(lname), _nickname(nickname), _phoneNumber(phone), _darkestSecret(secret) {
+}
+
 void	Contact::displayContactInfo() {
 	std::cout << "First Name: " << _firstName << std::endl;
 	std::cout << "Last Name: " << _lastName << std::endl;
 	std::cout << "Nickname: " << _nickname << std::endl;
 	std::cout << "Phone Number: " << _phoneNumber << std::endl;
 	std::cout << "Darkest Secret: " << _darkestSecret << std::endl;
+}
+
+getData::getData() {
+	/**/
+}
+
+getData::getData(std::string& name) {
+	(void)name;
+}
+
+getData::~getData() {
+	/**/
+}
+
+std::string	Contact::getFirstName() const {
+	return _firstName;
+}
+
+std::string	Contact::getLastName() const {
+	return _lastName;
+}
+
+std::string	Contact::getNickname() const {
+	return _nickname;
+}
+
+Contact::~Contact() {
+	/**/
 }

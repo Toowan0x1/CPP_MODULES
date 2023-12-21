@@ -19,20 +19,11 @@ class PhoneBook {
     private:
         Contact*    contacts[8];
         int         currentIndex;
-        std::string truncateString(const std::string& str, int length = 10) {
-            if (static_cast<int>(str.length()) <= length) {
-                return (str);
-            }
-            return (str.substr(0, length - 1) + ".");
-        }
+        std::string truncateString(const std::string& str, int length);
     public:
-        PhoneBook() : currentIndex(0) {};
-        ~PhoneBook() {
-            for (int i = 0; i < currentIndex; ++i) //fix later
-            {
-                delete  contacts[i];
-            }
-        }
+        PhoneBook();
+        ~PhoneBook();
+        
         void    addContact(const Contact& contact);
         void    searchContact();
 };

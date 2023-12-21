@@ -12,6 +12,24 @@
 
 #include "PhoneBook.hpp"
 
+PhoneBook::PhoneBook() : currentIndex(0) {
+    /**/
+}
+
+std::string PhoneBook::truncateString(const std::string& str, int length = 10) {
+    if (static_cast<int>(str.length()) <= length) {
+        return (str);
+    }
+    return (str.substr(0, length - 1) + ".");
+}
+
+PhoneBook::~PhoneBook() {
+    for (int i = 0; i < currentIndex; ++i)
+    {
+        delete contacts[i];
+    }
+}
+
 void    PhoneBook::addContact(const Contact& contact) {
     if (currentIndex < 8) {
         contacts[currentIndex++] = new Contact(contact); //this
