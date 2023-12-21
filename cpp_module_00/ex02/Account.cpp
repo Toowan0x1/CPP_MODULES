@@ -20,18 +20,13 @@ int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
-// Default Constructor
-Account::Account(void) {}
+Account::Account(void) {
+    /**/
+}
 
-// Parameterized Constructor
-Account::Account(int initial_deposit) : 
-    _accountIndex(_nbAccounts),
-    _amount(initial_deposit),
-    _nbDeposits(0),
-    _nbWithdrawals(0) {
-        _nbAccounts++; // this is to keep track of the total number of accounts created
-        _totalAmount += initial_deposit; // add initial_deposit to the current amount
-
+Account::Account(int initial_deposit) : _accountIndex(_nbAccounts), _amount(initial_deposit), _nbDeposits(0), _nbWithdrawals(0) {
+        _nbAccounts++;
+        _totalAmount += initial_deposit;
         _displayTimestamp();
         std::cout << " index:" << _accountIndex << ";amount:" << _amount << ";created" << std::endl;
     }
@@ -39,7 +34,6 @@ Account::Account(int initial_deposit) :
 Account::~Account(void) {
     _nbAccounts--;
     _totalAmount -= _amount;
-
     _displayTimestamp();
     std::cout << " index:" << _accountIndex << ";amount:" << _amount << ";closed" << std::endl;
 }
@@ -69,8 +63,6 @@ void Account::displayAccountsInfos(void) {
               << std::endl;
 }
 
-/* ======================================================================== */
-
 void Account::makeDeposit(int deposit) {
     _totalNbDeposits++;
     _nbDeposits++;
@@ -94,7 +86,8 @@ bool Account::makeWithdrawal(int withdrawal) {
                   << ";withdrawal:refused"
                   << std::endl;
         return false;
-    } else {
+    }
+    else {
         _totalNbWithdrawals++;
         _nbWithdrawals++;
         _totalAmount -= withdrawal;
@@ -123,9 +116,6 @@ void Account::displayStatus(void) const {
               << std::endl;
 }
 
-/* ======================================================================== */
-
-
 void Account::_displayTimestamp(void) {
     std::time_t t = std::time(0);
     std::tm* tm = std::localtime(&t);
@@ -135,23 +125,3 @@ void Account::_displayTimestamp(void) {
     
     std::cout << buffer;
 }
-
-
-/*
- implementing a basic banking system with an Account class. The key functionalities involve creating, managing, depositing, and withdrawing from bank accounts. Additionally, the project includes a testing file (tests.cpp) to validate the functionalities of your Account class.
-
-_nbAccounts: This variable is used to keep track of the total number of accounts created. It's incremented each time a new Account object is created and decremented when an account is closed (in the destructor).
-_totalAmount: This variable represents the total amount of money across all accounts. It gets updated whenever a new account is created or an existing account is modified (e.g., through deposits or withdrawals).
-_totalNbDeposits: This variable counts the total number of deposits made across all accounts. It is incremented each time a deposit is made.
-_totalNbWithdrawals: Similar to _totalNbDeposits, this variable counts the total number of withdrawals made across all accounts. It is incremented each time a withdrawal is made.
-
-p_amount previous amount
-
-*/
-
-/*
-std::cout << "Total number of accounts: " << Account::getNbAccounts() << std::endl;
-std::cout << "Total amount across all accounts: " << _totalAmount << std::endl;
-
-before the program will finish the _totalAmount will be 0 ? yes or no
-*/
