@@ -12,8 +12,16 @@
 
 #include "Contact.hpp"
 
+Contact::Contact() {
+	/**/
+}
+
 Contact::Contact(const std::string& fname, const std::string& lname, const std::string& nickname, const std::string& phone, const std::string& secret)
     : _firstName(fname), _lastName(lname), _nickname(nickname), _phoneNumber(phone), _darkestSecret(secret) {
+}
+
+Contact::~Contact() {
+	/**/
 }
 
 void	Contact::displayContactInfo() {
@@ -22,18 +30,6 @@ void	Contact::displayContactInfo() {
 	std::cout << "Nickname: " << _nickname << std::endl;
 	std::cout << "Phone Number: " << _phoneNumber << std::endl;
 	std::cout << "Darkest Secret: " << _darkestSecret << std::endl;
-}
-
-getData::getData() {
-	/**/
-}
-
-getData::getData(std::string& name) {
-	(void)name;
-}
-
-getData::~getData() {
-	/**/
 }
 
 std::string	Contact::getFirstName() const {
@@ -48,6 +44,14 @@ std::string	Contact::getNickname() const {
 	return _nickname;
 }
 
-Contact::~Contact() {
+getData::getData() {
+	/**/
+}
+
+getData::getData(std::string& name) {
+	(void)name;
+}
+
+getData::~getData() {
 	/**/
 }

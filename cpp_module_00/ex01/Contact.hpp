@@ -28,17 +28,17 @@ class	Contact
 		std::string	_phoneNumber;
 		std::string	_darkestSecret;
 	public:
+		Contact();
 		Contact(const std::string& fname, const std::string& lname, const std::string& nickname, const std::string& phone, const std::string& secret);
 		~Contact();
 		std::string	getFirstName() const;
 		std::string	getLastName() const;
 		std::string	getNickname() const;
-
-		void	custonFunc(void);
+		
 		void	displayContactInfo();
 };
 
-class getData {
+class	getData {
 	public:
 		getData();
 		getData(std::string &name);

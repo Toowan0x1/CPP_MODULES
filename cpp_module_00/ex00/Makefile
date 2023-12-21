@@ -17,7 +17,6 @@ SRC_DIR = .
 TARGET = megaphone
 SRC = $(SRC_DIR)/$(TARGET).cpp
 
-# Colors for terminal output 
 GREEN = \033[0;32m
 YELLOW = \033[0;33m
 RESET = \033[0m

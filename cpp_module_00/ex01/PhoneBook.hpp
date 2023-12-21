@@ -17,13 +17,13 @@
 
 class PhoneBook {
     private:
-        Contact*    contacts[8];
+        Contact     contacts[8];
         int         currentIndex;
         std::string truncateString(const std::string& str, int length);
     public:
         PhoneBook();
         ~PhoneBook();
-        
+
         void    addContact(const Contact& contact);
         void    searchContact();
 };

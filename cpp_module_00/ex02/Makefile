@@ -20,7 +20,6 @@ TARGET = Account
 SRC = $(wildcard $(SRC_DIR)/*.cpp)
 OBJ = $(patsubst $(SRC_DIR)/%.cpp,%.o,$(SRC))
 
-# Colors for terminal output
 GREEN = \033[0;32m
 YELLOW = \033[0;33m
 RESET = \033[0m
