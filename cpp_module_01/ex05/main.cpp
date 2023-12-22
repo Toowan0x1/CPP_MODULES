@@ -12,7 +12,7 @@
 
 #include "Harl.hpp"
 
-int main(int ac, char *av[]) {
+int main() {
     Harl        harl;
     std::string input;
 
@@ -22,7 +22,6 @@ int main(int ac, char *av[]) {
         std::cout << "Enter a level: ";
         std::cin >> input;
         harl.complain(input);
-        // handle if input is something else out of the levels[]
     }
     return 0;
 }

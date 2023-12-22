@@ -34,9 +34,6 @@ void    PhoneBook::addContact(const Contact& contact) {
         contacts[_currentIndex++] = contact;
     }
     else {
-        // for (int i = 0; i < 7; i++) {
-        //     contacts[i + 1] = contacts[i];
-        // }
         for (int i = 7; i > 0; i--) {
             contacts[i] = contacts[i - 1];
         }

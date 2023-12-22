@@ -21,7 +21,7 @@ class HumanB {
         Weapon*     weapon;
     public:
         HumanB(const std::string& humanName);
-        void    setWeapon(const Weapon& newWeapon);
+        void    setWeapon(Weapon& newWeapon);
         void    attack() const;
 };
 

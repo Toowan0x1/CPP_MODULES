@@ -9,8 +9,8 @@
 /*   Updated: 2023/08/16 23:34:05 by oel-houm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <iostream>
+#include <cctype>
 
 int main(int ac, char **av) {
     if (ac == 1)
@@ -24,5 +24,5 @@ int main(int ac, char **av) {
         }
     }
     std::cout << std::endl;
-    return 0;
+    return (0);
 }

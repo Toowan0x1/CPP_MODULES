@@ -16,9 +16,9 @@
 
 int main(void)
 {
-    Zombie *zombie = zombieHorde(N, "zombie"); // 
+    Zombie *zombie = zombieHorde(N, "zombie");
     for (int i = 0; i < N; i++) {
-        zombie->announce(); // why not zombie.announce()
+        zombie->announce();
     }
     delete[] zombie;
     return 0;

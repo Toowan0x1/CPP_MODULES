@@ -13,11 +13,11 @@
 #include "fileManip.hpp"
 
 fileManipulator::fileManipulator() {
-    // Constructor implementation
+    /**/
 }
 
 fileManipulator::~fileManipulator() {
-    // Destructor implementation
+    /**/
 }
 
 void fileManipulator::replaceInFile(const std::string& filename, const std::string& s1, const std::string& s2) {
@@ -45,7 +45,7 @@ void fileManipulator::replaceInFile(const std::string& filename, const std::stri
     outputFile.close();
 }
 
-void customReplace(std::string& str, const std::string& oldStr, const std::string& newStr) {
+void fileManipulator::replaceInstance(std::string& str, const std::string& oldStr, const std::string& newStr) {
     size_t pos = 0;
     size_t oldStrLen = oldStr.length();
     size_t newStrLen = newStr.length();
@@ -55,27 +55,3 @@ void customReplace(std::string& str, const std::string& oldStr, const std::strin
         pos += newStrLen;
     }
 }
-
-void fileManipulator::replaceInstance(std::string& str, const std::string& oldStr, const std::string& newStr) {
-    size_t pos = 0;
-    //size_t oldStrLen = oldStr.length();
-    //std::string result;
-    
-    while ((pos = str.find(oldStr, pos)) != std::string::npos) {
-        //str.replace(pos, oldStr.length(), newStr);
-        customReplace(str, oldStr, newStr);
-        pos += newStr.length();
-    }
-    
-}
-/*
-Handle ./fileManip test.txt "m" "mm" cause iterating in infinite loop
-*/
-
-/*
-    while ((pos = str.find(oldStr, pos)) != std::string::npos) {
-        str.replace(pos, oldStr.length(), newStr);
-        pos += newStr.length();
-    }
-    // use erase, insert
-*/

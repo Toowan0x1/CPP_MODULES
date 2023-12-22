@@ -24,17 +24,3 @@ int main(int ac, char *av[]) {
 
     return (0);
 }
-
-
-/*
-Although there are several ways to deal with Harl, one of the most effective is to
-SWITCH it off.
-
-$> ./harlFilter "I am not sure how tired I am today..."
-[ Probably complaining about insignificant problems ]
-
-Give the name harlFilter to your executable.
-
-You must use, and maybe discover, the switch statement in this exercise.
-
-*/

@@ -14,6 +14,7 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
+
 int main()
 {
     {
@@ -36,15 +37,3 @@ int main()
     
     return 0;
 }
-/*
-        Weapon sword("Sword");
-        HumanA humanA("Alice", sword);
-        humanA.Attack();
-
-        HumanB humanB("Bob");
-        humanB.Attack();
-
-        Weapon axe("Axe");
-        humanB.setWeapon(axe);
-        humanB.Attack();
-*/

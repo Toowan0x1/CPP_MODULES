@@ -12,24 +12,16 @@
 
 #include "Zombie.hpp"
 
-int main()
-{
-    //
-    return 0;
-}
-
-
-
-/*
+int main() {
     std::string name;
 
-    std::cout << "Creating zombie on the stack." << std::endl;
+    std::cout << "Creating zombie 1." << std::endl;
     std::cout << "Zombie name: " << std::flush;
     std::cin >> name;
 
     Zombie zombi1(name);
     
-    std::cout << "Creating zombie on the heap." << std::endl;
+    std::cout << "Creating zombie 2." << std::endl;
     std::cout << "Zombie name: " << std::flush;
     std::cin >> name;
 
@@ -38,6 +30,6 @@ int main()
     delete zombi2;
 
     std::cout << "Calling randomChump()." << std::endl;
-    randomChump("randi");
+    randomChump("Fester");
     return 0;
-*/
+}

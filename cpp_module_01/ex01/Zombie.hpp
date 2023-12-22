@@ -24,10 +24,9 @@ class Zombie {
         ~Zombie();
         void    announce(void);
         Zombie* newZombie(std::string name);
-        //Zombie* zombieHorde(int N, std::string name);
         void    setName(std::string name);
 };
 
-Zombie* zombieHorde(int N, std::string name); // it works fine after shifting it here
+Zombie* zombieHorde(int N, std::string name);
 
 #endif

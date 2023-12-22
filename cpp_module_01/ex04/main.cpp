@@ -18,7 +18,6 @@ int main(int ac, char* av[]) {
         return 1;
     }
 
-    
     std::string filename(av[1]);
     std::string s1(av[2]);
     std::string s2(av[3]);
