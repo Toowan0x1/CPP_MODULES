@@ -12,7 +12,7 @@
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() : currentIndex(0) {
+PhoneBook::PhoneBook() : _currentIndex(0) {
     for (int i = 0; i < 8; ++i) {
         contacts[i] = Contact("", "", "", "", "");
     }
@@ -30,8 +30,8 @@ std::string PhoneBook::truncateString(const std::string& str, int length = 10) {
 }
 
 void    PhoneBook::addContact(const Contact& contact) {
-    if (currentIndex < 8) {
-        contacts[currentIndex++] = contact;
+    if (_currentIndex < 8) {
+        contacts[_currentIndex++] = contact;
     }
     else {
         for (int i = 0; i < 7; i++) {
@@ -43,7 +43,7 @@ void    PhoneBook::addContact(const Contact& contact) {
 
 void    PhoneBook::searchContact() {
     std::cout << std::setw(10) << "Index" << "|" << std::setw(10) << "First Name" << "|" << std::setw(10) << "Last Name" << "|" << std::setw(10) << "Nickname" << std::endl;
-    for (int i = 0; i < currentIndex; ++i) {
+    for (int i = 0; i < _currentIndex; ++i) {
         std::cout << std::setw(10) << i << "|" << std::setw(10) << truncateString(contacts[i].getFirstName()) << "|" << std::setw(10) << truncateString(contacts[i].getLastName()) << "|" << std::setw(10) << truncateString(contacts[i].getNickname()) << std::endl;
     }
     int index;
@@ -55,7 +55,7 @@ void    PhoneBook::searchContact() {
         std::cout << "Invalid input. Please enter a valid index." << std::endl;
         return;
     }
-    if (index >= 0 && index < currentIndex) {
+    if (index >= 0 && index < _currentIndex) {
         contacts[index].displayContactInfo();
     } else {
         std::cout << "Invalid index." << std::endl;

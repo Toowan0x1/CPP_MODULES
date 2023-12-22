@@ -18,7 +18,7 @@
 class PhoneBook {
     private:
         Contact     contacts[8];
-        int         currentIndex;
+        int         _currentIndex;
         std::string truncateString(const std::string& str, int length);
     public:
         PhoneBook();

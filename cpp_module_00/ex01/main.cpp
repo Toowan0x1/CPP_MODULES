@@ -15,15 +15,15 @@
 int main(void) {
     PhoneBook   phonebook;
 
-    for (int i = 0; i < 8; ++i) {
+    /*for (int i = 0; i < 8; ++i) {
         std::string fname = "omar";
         std::string lname = "elhoumadi";
-        std::string nickname ="toowan";
+        std::string nickname ="matrixMan";
         std::string phone = "212";
-        std::string secret = "no_secret";
+        std::string secret = "noSecret";
         Contact contact(fname, lname, nickname, phone, secret);
         phonebook.addContact(contact);
-    }
+    }*/
     std::string command;
     while (command.compare("EXIT"))
     {
