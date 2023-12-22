@@ -38,11 +38,4 @@ class	Contact
 		void	displayContactInfo();
 };
 
-class	getData {
-	public:
-		getData();
-		getData(std::string &name);
-		~getData();
-};
-
 #endif

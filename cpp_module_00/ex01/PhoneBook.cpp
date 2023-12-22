@@ -22,8 +22,8 @@ PhoneBook::~PhoneBook() {
     /**/
 }
 
-std::string PhoneBook::truncateString(const std::string& str, int length = 10) {
-    if (static_cast<int>(str.length()) <= length) {
+std::string PhoneBook::truncateString(const std::string& str, size_t length = 10) {
+    if (str.length() <= length) {
         return (str);
     }
     return (str.substr(0, length - 1) + ".");
@@ -34,10 +34,13 @@ void    PhoneBook::addContact(const Contact& contact) {
         contacts[_currentIndex++] = contact;
     }
     else {
-        for (int i = 0; i < 7; i++) {
-            contacts[i] = contacts[i + 1];
+        // for (int i = 0; i < 7; i++) {
+        //     contacts[i + 1] = contacts[i];
+        // }
+        for (int i = 7; i > 0; i--) {
+            contacts[i] = contacts[i - 1];
         }
-        contacts[7] = contact;
+        contacts[0] = contact;
     }
 }
 

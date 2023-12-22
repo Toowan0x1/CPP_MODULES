@@ -44,14 +44,3 @@ std::string	Contact::getNickname() const {
 	return _nickname;
 }
 
-getData::getData() {
-	/**/
-}
-
-getData::getData(std::string& name) {
-	(void)name;
-}
-
-getData::~getData() {
-	/**/
-}
