@@ -62,3 +62,10 @@ void    PhoneBook::searchContact() {
         return;
     }
 }
+
+/*
+ABOUT 'std::numeric_limits<std::streamsize>::max()'
+- std::cin.ignore: This is a member function of the std::istream class, which is part of the C++ Standard Library's Input/Output Stream Library. It's used to ignore characters in the input buffer.
+- std::numeric_limits<std::streamsize>::max(): This part provides the maximum representable value for the type std::streamsize. It essentially specifies the maximum number of characters to ignore.
+- '\n': This specifies the delimiter or character until which the ignoring should occur. In this case, it's the newline character ('\n'). The function will ignore characters in the input buffer until it encounters a newline character.
+*/
