@@ -12,28 +12,36 @@
 
 CXX = clang++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
+LDFLAGS =
 
 SRC_DIR = .
 TARGET = ScavTrap
-SRC = $(SRC_DIR)/$(TARGET).cpp
 
-# Colors for terminal output
+SRC = $(wildcard $(SRC_DIR)/*.cpp)
+OBJ = $(patsubst $(SRC_DIR)/%.cpp,%.o,$(SRC))
+
 GREEN = \033[0;32m
 YELLOW = \033[0;33m
 RESET = \033[0m
 
 all: $(TARGET)
 
-$(TARGET): $(SRC)
-        @echo "$(YELLOW)Compiling $(TARGET).cpp...$(RESET)"
-        @$(CXX) $(CXXFLAGS) -o $@ $^
-        @echo "$(GREEN)Compilation complete: $(TARGET)$(RESET)"
+$(TARGET): $(OBJ)
+	@echo "$(YELLOW)Linking...$(RESET)"
+	@$(CXX) $(LDFLAGS) -o $@ $^
+	@echo "$(GREEN)Compilation complete: $(TARGET)$(RESET)"
+
+%.o: $(SRC_DIR)/%.cpp
+	@echo "$(YELLOW)Compiling $<...$(RESET)"
+	@$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 clean:
-        @$(RM) $(TARGET)
-        @printf "$(YELLOW)- Executable removed.$(RESET)\n"
+	@$(RM) $(OBJ)
+	@printf "$(YELLOW)- Object files removed.$(RESET)\n"
 
 fclean: clean
+	@$(RM) $(TARGET)
+	@printf "$(YELLOW)- Executable removed.$(RESET)\n"
 
 re: fclean all
 

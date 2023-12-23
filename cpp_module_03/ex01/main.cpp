@@ -34,5 +34,5 @@ int main( void )
     ash.beRepaired( 10 );
     ash.guardGate();
 
-    return EXIT_SUCCESS;
+    return 0;
 }

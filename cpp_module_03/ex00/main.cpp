@@ -10,4 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ClapTrap.hpp"
 
+int main() {
+    ClapTrap claptrap("CL4P-TR4P");
+
+    claptrap.attack("Enemy1");
+    claptrap.takeDamage(9);
+    claptrap.beRepaired(1);
+    claptrap.attack("Enemy2");
+
+    return 0;
+}
