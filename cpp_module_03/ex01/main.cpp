@@ -12,26 +12,14 @@
 
 #include "ScavTrap.hpp"
 
-/*
-int main() {
-    ClapTrap claptrap("CL4P-TP");
-
-    claptrap.attack("Enemy1");
-    claptrap.takeDamage(5);
-    claptrap.beRepaired(3);
-    claptrap.attack("Enemy2");
-
-    return 0;
-}*/
-
 int main( void )
 {
-    ScavTrap ash( "Ash" );
-    ScavTrap ash2( ash );
+    ScavTrap toowan("Toowan");
+    ScavTrap toowan2(toowan);
 
-    ash.attack( "the air" );
-    ash.takeDamage( 10 );
-    ash.beRepaired( 10 );
+    ash.attack("the alien");
+    ash.takeDamage(10);
+    ash.beRepaired(10);
     ash.guardGate();
 
     return 0;
