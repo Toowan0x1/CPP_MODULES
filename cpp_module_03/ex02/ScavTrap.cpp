@@ -16,7 +16,7 @@ ScavTrap::ScavTrap() {
     std::cout << "ScavTrap default constructor called for " << _name << "."<< std::endl;
 }
 
-ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name /*newName*/) {
+ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
     _hitPoints = 100;
     _energyPoints = 50;
     _attackDamage = 20;
@@ -25,7 +25,7 @@ ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name /*newName*/) {
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) {
-    std::cout << "ScavTrap copy constructor called for " << _name << "." << std::endl; // this->_name
+    std::cout << "ScavTrap copy constructor called for " << _name << "." << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& other) {

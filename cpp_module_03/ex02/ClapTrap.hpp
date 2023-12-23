@@ -16,7 +16,6 @@
 #include <iostream>
 
 class ClapTrap {
-	// change access level to prottected
 	protected:
 		std::string		_name;
 		unsigned int	_hitPoints;
@@ -24,10 +23,10 @@ class ClapTrap {
 		unsigned int	_attackDamage;
 	public:
 		ClapTrap();
-		ClapTrap(const std::string newName); //name
+		ClapTrap(const std::string name);
 		ClapTrap(const ClapTrap& other);
 		ClapTrap &operator=(const ClapTrap& other);
-		virtual ~ClapTrap(); // Make the destructor virtual
+		virtual ~ClapTrap();
 		
 		void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);

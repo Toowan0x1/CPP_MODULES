@@ -13,24 +13,23 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap() {
-    /**/
+    std::cout << "FragTrap constructor called for " << _name << "." << std::endl;
 }
-//FragTrap::FragTrap(const std::string& name) : ClapTrap(name) {
+
 FragTrap::FragTrap(const std::string name) : ClapTrap(name) {
     _hitPoints = 100;
     _energyPoints = 100;
     _attackDamage = 30;
 
-    std::cout << "FragTrap constructor called for " << _name << "." << std::endl;
+    std::cout << "FragTrap parameterized constructor called for " << _name << "." << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other) {
     std::cout << "FragTrap copy constructor called for " << _name << "." << std::endl;
 }
 
-FragTrap& FragTrap::operator=(const FragTrap& other) { //rhs
+FragTrap& FragTrap::operator=(const FragTrap& other) {
     if (this != &other) {
-        //FragTrap::operator=(other);
         ClapTrap::operator=(other);
         std::cout << "FragTrap copy assignment operator called for " << _name << "." << std::endl;
     }
@@ -38,7 +37,7 @@ FragTrap& FragTrap::operator=(const FragTrap& other) { //rhs
 }
 
 FragTrap::~FragTrap() {
-    std::cout << "FragTrap decontructor called for " << _name << "." << std::endl;
+    std::cout << "FragTrap destructor called for " << _name << "." << std::endl;
 }
 
 void    FragTrap::highFivesGuys(void) {
