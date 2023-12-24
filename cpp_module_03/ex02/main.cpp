@@ -2,19 +2,19 @@
 
 int main( void )
 {
-    FragTrap ash("Ash");
+    FragTrap ashely("Ashely");
 
-    ash.attack( "the air" );
-    ash.takeDamage(10);
-    ash.beRepaired(10);
+    ashely.attack("the alien");
+    ashely.takeDamage(10);
+    ashely.beRepaired(10);
     
     FragTrap toowan = ash;
     toowan.takeDamage(100);
     toowan.takeDamage(100);
     toowan.beRepaired(10);
-    ash.takeDamage(10);
+    ashely.takeDamage(10);
 
-    ash.highFivesGuys();
+    ashely.highFivesGuys();
 
     return 0;
 }

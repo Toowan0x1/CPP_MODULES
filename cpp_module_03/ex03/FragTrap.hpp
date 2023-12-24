@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-houm <oel-houm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 16:12:08 by oel-houm          #+#    #+#             */
-/*   Updated: 2023/12/19 18:40:08 by oel-houm         ###   ########.fr       */
+/*   Created: 2023/12/19 18:18:02 by oel-houm          #+#    #+#             */
+/*   Updated: 2023/12/19 18:18:03 by oel-houm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef FRAG_TRAP_HPP
+#define FRAG_TRAP_HPP
 
-int main( void )
-{
-    ScavTrap toowan("Toowan");
-    ScavTrap ashely(toowan);
+#include "ClapTrap.hpp"
 
-    toowan.attack("the alien");
-    toowan.takeDamage(10);
-    toowan.beRepaired(10);
-    toowan.guardGate();
+class FragTrap : public ClapTrap {
+    public:
+        FragTrap();
+        FragTrap(const std::string name);
+        FragTrap(const FragTrap& other);
+        FragTrap &operator=(const FragTrap& other);
+        ~FragTrap();
 
-    return 0;
-}
+        void    highFivesGuys(void);
+};
+
+#endif

@@ -158,10 +158,10 @@ std::ostream &operator<<(std::ostream &ostream, const Fixed& obj) {
 	return ostream;
 }
 
-/* member member functions to implement: 
+/* member member functions to implement:
  -comparation operator
 - arethemtic operator
 - increment & decrement
-- min & max 
+- min & max
  - ...
 */
