@@ -10,7 +10,7 @@ These cpp modules are from the [42](https://42.fr) cursus!
 | CPP_01 | Pointers, & File streams | 100/100 ✅ |
 | CPP_02 | Orthodox canonical form, & Fixed point numbers |  80/100 ✅ |
 | CPP_03 | Inheretence, Multiple inheretence, Polymorphism, Constructor Chaining, Access specifier (Base class & Class members) |  80/100 ✅ |
-| CPP_04 | Inheritance & Multiple inheretence, Polymorphism, The diamond problem | NOT YET ⏳ |
+| CPP_04 | Inheritance & Multiple inheretence, Polymorphism, The diamond problem | 80/100 ✅ |
 | CPP_05 | ... | NOT YET ⏳ |
 | CPP_06 | ... | NOT YET ⏳ |
 | CPP_07 | ... | NOT YET ⏳ |
