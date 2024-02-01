@@ -12,13 +12,13 @@
 
 #include "Animal.hpp"
 
-Animal::Animal() : AnimalType("Animal") {
-    std::cout << this->AnimalType << " default constructor called." << std::endl;
+Animal::Animal() : animalType("Animal") {
+    std::cout << this->animalType << " default constructor called." << std::endl;
 }
 
-Animal::Animal(std::string AnimalType) : AnimalType(AnimalType)
+Animal::Animal(std::string animalType) : animalType(animalType)
 {
-    std::cout << "Animal " << this->AnimalType << " defaut constructor called." << std::endl;
+    std::cout << "Animal " << this->animalType << " defaut constructor called." << std::endl;
 }
 
 Animal::~Animal()
@@ -36,7 +36,7 @@ Animal& Animal::operator=(const Animal& rhs)
 {
     std::cout << "Animal assignment operator called" << std::endl;
     if (this != &rhs) {
-        this->AnimalType = rhs.AnimalType;
+        this->animalType = rhs.animalType;
     }
     return *this;
 }
@@ -48,5 +48,5 @@ void Animal::makeSound() const
 
 std::string    Animal::getType() const
 {
-    return this->AnimalType;
+    return this->animalType;
 }

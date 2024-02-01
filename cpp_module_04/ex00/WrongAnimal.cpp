@@ -10,40 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
-
-class WrongAnimal {
-    protected:
-        std::string animalType;
-    public:
-        WrongAnimal();
-        WrongAnimal(std::string animalType);
-        WrongAnimal(const WrongAnimal& src);
-        WrongAnimal& operator=(const WrongAnimal& rhs);
-        ~WrongAnimal();
-        std::string getType() const;
-        void    makeSound() const;
-};
-
-#endif
-
-
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() : type("Wrong Animal") {
-    std::cout << "WrongAnimal constructor called" << std::endl;
+WrongAnimal::WrongAnimal() : animalType("WrongAnimal") {
+    std::cout << this->animalType << " default constructor called." << std::endl;
 }
 
-WrongAnimal::~WrongAnimal() {
-    std::cout << "WrongAnimal destructor called" << std::endl;
+WrongAnimal::WrongAnimal(std::string animalType) : animalType(animalType)
+{
+    std::cout << "WrongAnimal " << this->animalType << " constructor called." << std::endl;
 }
 
-std::string WrongAnimal::getType() const {
-    return type;
+WrongAnimal::~WrongAnimal( void )
+{
+    std::cout << "WrongAnimal destructor called." << std::endl; ////
 }
 
-void WrongAnimal::makeSound() const {
-    std::cout << "Some wrong sound" << std::endl;
+WrongAnimal::WrongAnimal(const WrongAnimal& src)
+{
+    std::cout << "WrongAnimal copy constructor called." << std::endl;
+    *this = src;
+}
+
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal& rhs)
+{
+    std::cout << "WrongAnimal assignment operator called." << std::endl;
+    if (this != &rhs) {
+        this->animalType = rhs.animalType;
+    }
+    return *this;
+}
+
+void WrongAnimal::makeSound(void) const
+{
+    std::cout << "Wrong Sound called." << std::endl;
+}
+
+std::string    WrongAnimal::getType() const
+{
+    return this->animalType;
 }

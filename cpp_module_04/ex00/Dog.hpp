@@ -13,11 +13,13 @@
 #ifndef DOG_HPP
 #define DOG_HPP
 
-class Dot : public Animal {
+#include "Animal.hpp"
+
+class Dog : public Animal {
     public:
         Dog();
         ~Dog();
-        void makeSound() const override;
+        void makeSound() const;
 };
 
 #endif

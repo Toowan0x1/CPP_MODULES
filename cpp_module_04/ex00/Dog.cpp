@@ -13,11 +13,11 @@
 #include "Dog.hpp"
 
 Dog::Dog() : Animal("Dog") {
-    std::cout << this->type << " default constructor called." << std::endl;
+    std::cout << this->animalType << " default constructor called." << std::endl;
 }
 
 Dog::~Dog() {
-    std::cout << this->type << " deconstructor called." << std::endl;
+    std::cout << this->animalType << " destructor called." << std::endl;
 }
 
 void    Dog::makeSound( void ) const

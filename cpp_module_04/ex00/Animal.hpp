@@ -17,10 +17,12 @@
 
 class Animal {
     protected:
-        std::string AnimalType;
+        std::string animalType;
     public:
         Animal();
-        Animal(std::string AnimalType);
+        Animal(std::string animalType);
+        Animal(const Animal& src);
+        Animal& operator=(const Animal& rhs);
         virtual ~Animal();
         //virtual std::string getType() const;
         std::string getType() const;

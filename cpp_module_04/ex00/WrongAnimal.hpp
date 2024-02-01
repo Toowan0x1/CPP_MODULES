@@ -10,43 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
-WrongAnimal::WrongAnimal() : animalType("WrongAnimal") {
-    std::cout << this->animalType << " default constructor called." << std::endl;
-}
+#include <string>
+#include <iostream>
 
-WrongAnimal::WrongAnimal(std::string type) : _type( type )
-{
-    std::cout << "WrongAnimal " << this->_type << " constructor called." << std::endl;
-}
+class WrongAnimal {
+    protected:
+        std::string animalType;
+    public:
+        WrongAnimal();
+        WrongAnimal(std::string animalType);
+        WrongAnimal(const WrongAnimal& src);
+        WrongAnimal& operator=(const WrongAnimal& rhs);
+        ~WrongAnimal();
+        std::string getType() const;
+        void    makeSound() const;
+};
 
-WrongAnimal::~WrongAnimal( void )
-{
-    std::cout << "WrongAnimal destructor called." << std::endl; ////
-}
-
-WrongAnimal::WrongAnimal(const WrongAnimal& src)
-{
-    std::cout << "WrongAnimal copy constructor called." << std::endl;
-    *this = src;
-}
-
-WrongAnimal& WrongAnimal::operator=( const WrongAnimal& rhs )
-{
-    std::cout << "WrongAnimal assignment operator called." << std::endl;
-    if (this != &rhs) {
-        this->_type = rhs.animalType;
-    }
-    return *this;
-}
-
-void WrongAnimal::makeSound( void ) const
-{
-    std::cout << "Wrong Sound called." << std::endl;
-}
-
-std::string    WrongAnimal::getType() const
-{
-    return this->animalType;
-}
+#endif
