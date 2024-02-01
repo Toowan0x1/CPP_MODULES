@@ -6,11 +6,11 @@ These cpp modules are from the [42](https://42.fr) cursus!
 
 | CPP | Concept |Validation |
 | ------ | ------ | ------ |
-| CPP_00 | namesspaces, classes, accessors/getters, and C++ string manipulation | 100/100 ✅ |
+| CPP_00 | namespaces, classes, accessors/getters, and C++ string manipulation | 100/100 ✅ |
 | CPP_01 | Pointers, ...  | 100/100 ✅ |
 | CPP_02 | Orthodox canonical form, & Fixed point numbers |  80/100 ✅ |
-| CPP_03 | Inheretence, access specifier (base class & class members) |  80/100 ✅ |
-| CPP_04 | ... | NOT YET ⏳ |
+| CPP_03 | Inheretence, Multiple inheretence, Polymorphism, Constructor Chaining, Access specifier (Base class & Class members) |  80/100 ✅ |
+| CPP_04 | Inheritance & Multiple inheretence, Polymorphism, The diamond problem | NOT YET ⏳ |
 | CPP_05 | ... | NOT YET ⏳ |
 | CPP_06 | ... | NOT YET ⏳ |
 | CPP_07 | ... | NOT YET ⏳ |
