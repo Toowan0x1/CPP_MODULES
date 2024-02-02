@@ -13,11 +13,11 @@
 #include "Cat.hpp"
 
 Cat::Cat() : Animal("Cat") {
-    std::cout << this->animalType << " default constructor called." << std::endl;
+    std::cout << this->_type << " default constructor called." << std::endl;
 }
 
 Cat::~Cat() {
-    std::cout << this->animalType << " deconstructor called." << std::endl;
+    std::cout << this->_type << " deconstructor called." << std::endl;
 }
 
 void    Cat::makeSound( void ) const

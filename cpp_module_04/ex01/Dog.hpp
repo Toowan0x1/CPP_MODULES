@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-houm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 23:21:42 by oel-houm          #+#    #+#             */
-/*   Updated: 2024/02/01 23:21:49 by oel-houm         ###   ########.fr       */
+/*   Created: 2024/02/01 23:24:04 by oel-houm          #+#    #+#             */
+/*   Updated: 2024/02/01 23:25:16 by oel-houm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#ifndef DOG_HPP
+#define DOG_HPP
 
-Dog::Dog() : Animal("Dog") {
-    std::cout << this->_type << " default constructor called." << std::endl;
-}
+#include "Animal.hpp"
 
-Dog::~Dog() {
-    std::cout << this->_type << " destructor called." << std::endl;
-}
+class Dog : public Animal {
+    private:
+        Brain *_dogBrain;
+    public:
+        Dog();
+        ~Dog();
+        void makeSound() const;
+};
 
-void    Dog::makeSound( void ) const
-{
-    std::cout << "Woof! Woof!" << std::endl;
-}
+#endif

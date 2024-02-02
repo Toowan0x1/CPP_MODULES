@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-houm <oel-houm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 00:07:11 by oel-houm          #+#    #+#             */
-/*   Updated: 2024/02/02 00:07:12 by oel-houm         ###   ########.fr       */
+/*   Created: 2024/02/02 00:57:47 by oel-houm          #+#    #+#             */
+/*   Updated: 2024/02/02 00:57:48 by oel-houm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#ifndef BRAIN_CPP
+#define BRAIN_CPP
 
-WrongCat::WrongCat() : WrongAnimal("WrongCat") {
-    std::cout << this->_type << " default constructor called." << std::endl;
-}
+#include <iostream>
 
-WrongCat::~WrongCat() {
-    std::cout << this->_type << " destructor called." << std::endl;
-}
+class Brain {
+    private:
+        std::string _ideas[100];
+    public:
+        Brain();
+        ~Brain();
+        Brain(const Brain& src);
+        Brain& operator=(const Brain& rhs);
 
-void    WrongCat::makeSound() const {
-    std::cout << "Wrong Meow! Wrong Meow!" << std::endl;
-}
+        void generateIdeas();
+};
+
+#endif

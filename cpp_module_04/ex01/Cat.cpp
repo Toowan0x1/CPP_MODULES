@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-houm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 23:21:42 by oel-houm          #+#    #+#             */
-/*   Updated: 2024/02/01 23:21:49 by oel-houm         ###   ########.fr       */
+/*   Created: 2024/02/01 22:40:56 by oel-houm          #+#    #+#             */
+/*   Updated: 2024/02/01 22:40:57 by oel-houm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog() : Animal("Dog") {
+Cat::Cat() : Animal("Cat") {
     std::cout << this->_type << " default constructor called." << std::endl;
+    try {
+        this->_catBrain = new Brain();
+    }
+    catch (const std::bad_alloc& e) {
+        std::cout << "Error: Unable to allocate memory for Cat's Brain - " << e.what() << std::endl;
+        throw;
+    }
 }
 
-Dog::~Dog() {
-    std::cout << this->_type << " destructor called." << std::endl;
+Cat::~Cat() {
+    std::cout << this->_type << " deconstructor called." << std::endl;
 }
 
-void    Dog::makeSound( void ) const
+
+void    Cat::makeSound( void ) const
 {
-    std::cout << "Woof! Woof!" << std::endl;
+    std::cout << "Meow! Meow!" << std::endl;
 }

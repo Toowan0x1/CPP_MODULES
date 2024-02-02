@@ -14,6 +14,13 @@
 
 Dog::Dog() : Animal("Dog") {
     std::cout << this->_type << " default constructor called." << std::endl;
+    try {
+        this->_dogBrain = new Brain();
+    }
+    catch (const std::bad_alloc &e) {
+        std::cout << "Error: Unable to allocate memory for Dog's Brain - " << e.what() << std::endl;
+        throw;
+    }
 }
 
 Dog::~Dog() {
