@@ -6,7 +6,7 @@
 /*   By: oel-houm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 22:40:56 by oel-houm          #+#    #+#             */
-/*   Updated: 2024/02/01 22:40:57 by oel-houm         ###   ########.fr       */
+/*   Updated: 2024/02/05 01:44:36 by oel-houm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ Cat::Cat() : AAnimal("Cat") {
         std::cout << "Error: Unable to allocate memory for Cat's Brain - " << e.what() << std::endl;
         throw;
     }
+    delete this->_catBrain;
 }
 
 Cat::~Cat() {
-    std::cout << this->_type << " deconstructor called." << std::endl;
+    std::cout << this->_type << " destructor called." << std::endl;
 }
-
 
 void    Cat::makeSound( void ) const
 {

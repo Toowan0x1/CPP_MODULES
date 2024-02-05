@@ -21,6 +21,7 @@ Dog::Dog() : AAnimal("Dog") {
         std::cout << "Error: Unable to allocate memory for Dog's Brain - " << e.what() << std::endl;
         throw;
     }
+    delete this->_dogBrain;
 }
 
 Dog::~Dog() {

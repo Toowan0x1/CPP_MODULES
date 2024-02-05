@@ -6,7 +6,7 @@
 /*   By: oel-houm <oel-houm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 00:57:53 by oel-houm          #+#    #+#             */
-/*   Updated: 2024/02/02 00:57:54 by oel-houm         ###   ########.fr       */
+/*   Updated: 2024/02/05 01:49:57 by oel-houm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ Brain& Brain::operator=(const Brain& rhs)
 
 Brain::~Brain() {
     std::cout << "Brain destructor called." << std::endl;
+    for (int i = 0; i< 100; ++i) {
+	    //delete this->_ideas[i];
+    }
     // No need to delete or free the 'ideas' array, it's managed automatically
 }
 
