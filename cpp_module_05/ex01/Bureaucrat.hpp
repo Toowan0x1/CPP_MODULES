@@ -17,12 +17,20 @@
 #include <iostream>
 #include <exception>
 
+#include "Form.hpp"
+
+class Form;
+
 class Bureaucrat {
     private:
         const std::string   _name;
         int                 _grade;
 
+        static const int highestGrade = 1;
+        static const int lowestGrade = 150;
+
         Bureaucrat();
+    
     public:
         Bureaucrat(const std::string &name, int grade);
         Bureaucrat(const Bureaucrat& src);
@@ -35,6 +43,8 @@ class Bureaucrat {
 
         void    incrementGrade();
         void    decrementGrade();
+        
+        void    signForm(Form& form);
 
         class GradeTooHighException : public std::exception {
             public:
@@ -47,6 +57,7 @@ class Bureaucrat {
 
 };
 
+// Stream Insertion Operator
 std::ostream&   operator<<(std::ostream& o, const Bureaucrat& rhs);
 
 #endif

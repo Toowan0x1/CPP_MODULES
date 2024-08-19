@@ -22,7 +22,11 @@ class Bureaucrat {
         const std::string   _name;
         int                 _grade;
 
+        static const int highestGrade = 1;
+        static const int lowestGrade = 150;
+
         Bureaucrat();
+    
     public:
         Bureaucrat(const std::string &name, int grade);
         Bureaucrat(const Bureaucrat& src);
@@ -47,6 +51,7 @@ class Bureaucrat {
 
 };
 
+// Overloading the << Operator (Stream Insertion Operator)
 std::ostream&   operator<<(std::ostream& o, const Bureaucrat& rhs);
 
 #endif

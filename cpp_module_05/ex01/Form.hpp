@@ -13,7 +13,9 @@
 #ifndef FORM_HPP
 #define FORM_HPP
 
-#include <iostream>
+#include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form {
     private:
@@ -23,7 +25,9 @@ class Form {
         const int           _gradeToExecute;
 
         Form();
+    
     public:
+        // Copy constructors and Destructor
         Form(const std::string& name, int gradeToSign);
         Form(const std::string& name, int gradeToSign, int gradeToExecute);
         Form(const Form& src);
@@ -31,23 +35,39 @@ class Form {
 
         Form& operator=(const Form& rhs);
 
+        // Getters
         std::string getName() const;
-        bool    getSigned() const;
-        int     getGradeToSign() const;
-        int     getGradeToExecute() const;
+        bool        getSigned() const;
+        int         getGradeToSign() const;
+        int         getGradeToExecute() const;
 
+        // Member Functions
         void    beSigned(const Bureaucrat& bureaucrat);
 
-        class GradeToHighException : public std::exception {
+        // Exceptions
+        /*
+        class GradeTooHighException : public std::exception {
+            public:
+                virtual const char* what() const throw();
+                virtual ~GradeTooHighException() throw() {}
+        };
+        class GradeTooLowException : public std::exception {
+            public:
+                virtual const char* what() const throw();
+                virtual ~GradeTooLowException() throw() {}
+        };*/
+        class GradeTooHighException : public std::exception {
             public:
                 const char* what() const throw();
         };
-        class GradeToLowException : public std::exception() {
-            public
+
+        class GradeTooLowException : public std::exception {
+            public:
                 const char* what() const throw();
         };
 };
 
+// Overload of the insertion operator
 std::ostream&   operator<<( std::ostream& o, const Form& rhs );
 
 #endif
