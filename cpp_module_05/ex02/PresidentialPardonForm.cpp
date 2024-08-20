@@ -13,14 +13,11 @@
 #include "PresidentialPardonForm.hpp"
 #include <iostream>
 
-// Constructor
 PresidentialPardonForm::PresidentialPardonForm(const std::string& target)
     : AForm("Presidential Pardon Form", 25, 5), _target(target) {}
 
-// Destructor
 PresidentialPardonForm::~PresidentialPardonForm() {}
 
-// Execute form action
 void PresidentialPardonForm::execute(const Bureaucrat& executor) const {
     checkExecution(executor);
     std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
