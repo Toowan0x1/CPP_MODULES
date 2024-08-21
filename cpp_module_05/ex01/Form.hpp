@@ -41,21 +41,14 @@ class Form {
         int         getGradeToSign() const;
         int         getGradeToExecute() const;
 
-        // Member Functions
+        // beSigned() member function that takes a Bureaucrat as parameter.
         void    beSigned(const Bureaucrat& bureaucrat);
 
         // Exceptions
-        /*
         class GradeTooHighException : public std::exception {
             public:
-                virtual const char* what() const throw();
-                virtual ~GradeTooHighException() throw() {}
-        };
-        class GradeTooLowException : public std::exception {
-            public:
-                virtual const char* what() const throw();
-                virtual ~GradeTooLowException() throw() {}
-        };*/
+                virtual c.
+        }
         class GradeTooHighException : public std::exception {
             public:
                 const char* what() const throw();
