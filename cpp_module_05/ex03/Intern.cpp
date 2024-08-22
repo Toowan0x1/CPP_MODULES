@@ -56,19 +56,21 @@ delete form;
 
 // makeForm Function
 AForm* Intern::makeForm(const std::string& formName, const std::string target) const {
-    formType forms[] = {
+    FormType forms[] = {
         {"shrubbery creation", &Intern::createShrubbery},
-        {"robotomy creation", &Intern::createRobotomy},
-        {"presidential creation", &Intern::createPardon}
+        {"robotomy request", &Intern::createRobotomy},
+        {"presidential pardon", &Intern::createPardon}
     };
 
     for (int i = 0; i < 3; ++i) {
-        if (formName == forms[i].name) {
-            std::cout << "Intern creates" << formName << std::endl;
-            return (this->);
+        if (forms[i].name == formName) {
+            std::cout << "Intern creates" << formName << "." << std::endl;
+            // passing target as argument to the member function
+            // In case of i = 1, 'this->*forms[i]->creator' it will be equivalent to '&Intern::createRobotomy'
+            return (this->*forms[i].creator)(target);
         }
     }
 
-    std::cout << "Error: Form " << formName << "doesn't exist." << std::endl;
+    std::cout << "Error: Form " << formName << " doesn't exist." << std::endl;
     return 0; // Return 0 instead of nullptr for C++98.
 }

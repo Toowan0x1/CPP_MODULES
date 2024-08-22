@@ -21,12 +21,11 @@
 
 class Intern {
     private:
-        typedef AForm* (Intern::FormCreator)();
         typedef AForm* (Intern::*FormCreator)(const std::string& target) const;
         struct FormType {
             const char *name;
             FormCreator creator;
-        }
+        };
 
         AForm* createShrubbery(const std::string& target) const;
         AForm* createRobotomy(const std::string& target) const;
@@ -38,6 +37,6 @@ class Intern {
         ~Intern();
 
         AForm* makeForm(const std::string& formName, const std::string target) const;
-}
+};
 
 #endif
