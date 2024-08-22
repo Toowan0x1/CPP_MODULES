@@ -12,9 +12,9 @@ These cpp modules are from the [42](https://42.fr) cursus!
 | CPP_03 | Inheretence, Multiple inheretence, Polymorphism, Constructor Chaining, Access specifier (Base class & Class members) |  80/100 ✅ |
 | CPP_04 | Subtype polymorphism, abstract classes, interfaces, The diamond problem | 80/100 ✅ |
 | CPP_05 | Templates, Exception handling, and Operator overloading, Member Function | 100/100 ✅ |
-| CPP_06 | Static casting, Dynamic casting, Conversion of scalar types, Serialization and reinterpret casting | NOT YET ⏳ |
-| CPP_07 | Function templates, and Class templates | NOT YET ⏳ |
-| CPP_08 | STL & STL containers:(list, vector, map, stack), iterators & iterators adapters, and algorithms  | NOT YET ⏳ |
+| CPP_06 | Static casting, Dynamic casting, Conversion of scalar types, Serialization and reinterpret casting | 100/100 ✅ |
+| CPP_07 | Function templates, and Class templates | ⏳ ⏳ ⏳ |
+| CPP_08 | STL & STL containers:(list, vector, map, stack), iterators & iterators adapters, and algorithms  | ⏳ ⏳ ⏳ |
 | CPP_09 | Same shit as CPP_08 (CPP_08 Part II) | NOT YET ⏳ |
 
 Please don't copy paste any code if you are a fellow student.
