@@ -34,6 +34,6 @@ class ScalarConverter {
 };
 
 // Operator Overloading
-std::ostream& operator<<(std::ostream& out, const Converter& rhs);
+// std::ostream& operator<<(std::ostream& out, const Converter& rhs);
 
 #endif // SCALARCONVERTER_HPP
