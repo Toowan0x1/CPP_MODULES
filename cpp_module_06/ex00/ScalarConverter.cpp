@@ -129,28 +129,16 @@ void    ScalarConverter::fromDouble(const std::string& literal) {
     }
 }
 
-// fatima
-// meryem
-// hamza
 /*
 Key Points:
 - The ScalarConverter class is static to prevent instantiation and has static methods for conversion.
 - The conversion handles char, int, float, and double types along with the specific pseudo literals.
 - Error handling is done for out-of-range values, and appropriate messages are displayed for non-displayable characters or impossible conversions.
-// int
-// char
-// float
-// double
 // strtol, strtof(){}
 // !isprintable
 // errno = erange
 // !std::isfinite(fValue))
 !std::isfinite()
-./convert 'a'
-char: 'a'
-int: 97
-float: 97.0f
-double: 97.0
 */
 
 /*
