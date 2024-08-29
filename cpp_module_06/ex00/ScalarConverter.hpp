@@ -33,7 +33,4 @@ class ScalarConverter {
         static void fromDouble(const std::string& literal);
 };
 
-// Operator Overloading
-// std::ostream& operator<<(std::ostream& out, const Converter& rhs);
-
 #endif // SCALARCONVERTER_HPP

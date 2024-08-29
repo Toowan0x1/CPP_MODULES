@@ -19,13 +19,13 @@ int main(void) {
     myData.text = "Future is loading";
 
     // Serialize the pointer
-    uintptr_t raw = Serializer::serializer(&myData);
+    uintptr_t raw = Serializer::serialize(&myData);
 
     // Deserialize the raw data back to a pointer
     Data* deserializedData = Serializer::deserialize(raw);
 
     // Verify that the deserialized pointer matches the original
-    if () {
+    if (deserializedData == &myData) {
         std::cout << "Deserialization successful!" << std::endl;
         std::cout << "Number: " << deserializedData->number << std::endl;
         std::cout << "Text: " << deserializedData->text << std::endl;

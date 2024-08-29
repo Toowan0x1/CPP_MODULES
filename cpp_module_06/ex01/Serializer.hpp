@@ -17,12 +17,9 @@
 #include <cstdint> // For uintptr_t
 
 class Serializer {
-    static uintptr_t serializer(Data *ptr) {
-        return reinterpret_cast<uintptr_t>(ptr);
-    }
-    static Data* deserialize(uintptr_t raw) {
-        return reinterpret_cast<Data *>(raw);
-    }
+    public:
+        static uintptr_t serialize(Data *ptr);
+        static Data* deserialize(uintptr_t raw);
 };
 
 #endif // SERIALIZER_HPP

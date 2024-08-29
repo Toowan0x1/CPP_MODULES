@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
-
 #include <iostream>
 #include <cstdlib>
 #include <limits>
@@ -28,7 +27,7 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter&) {
 ScalarConverter::~ScalarConverter() {}
 
 
-/* ******************** Convert Functions ******************** */
+/* ******************** ScalarConverter Functions ******************** */
 void    ScalarConverter::convert(const std::string& literal) {
     if (literal.length() == 1 && !isdigit(literal[0])) {
         fromChar(literal);
@@ -56,7 +55,6 @@ void    ScalarConverter::fromChar(const std::string& literal) {
 void    ScalarConverter::fromInt(const std::string& literal) {
     long intValue = strtol(literal.c_str(), NULL, 10);
 
-    // If errno is set to ERANGE (indicating the value is out of range) or intValue is outside the int range, it prints "int: impossible".
     if (errno == ERANGE || intValue < std::numeric_limits<int>::min() ||
         intValue > std::numeric_limits<int>::max()) {
         std::cout << "int: impossible" <<std::endl;
@@ -128,53 +126,3 @@ void    ScalarConverter::fromDouble(const std::string& literal) {
         std::cout << "float: " << static_cast<float>(dValue) << std::endl;
     }
 }
-
-/*
-Key Points:
-- The ScalarConverter class is static to prevent instantiation and has static methods for conversion.
-- The conversion handles char, int, float, and double types along with the specific pseudo literals.
-- Error handling is done for out-of-range values, and appropriate messages are displayed for non-displayable characters or impossible conversions.
-// strtol, strtof(){}
-// !isprintable
-// errno = erange
-// !std::isfinite(fValue))
-!std::isfinite()
-*/
-
-/*
-sh-5.2$ ./ScalarConverter 96
-int: 96
-char: '`'
-float: 96f
-double: 96
-sh-5.2$ ./ScalarConverter 48
-int: 48
-char: '0'
-float: 48f
-double: 48
-sh-5.2$ 
-sh-5.2$ 
-sh-5.2$ 
-sh-5.2$ ./ScalarConverter 48
-int: 48
-char: '0'
-float: 48f
-double: 48
-sh-5.2$ 
-sh-5.2$ 
-sh-5.2$ ./ScalarConverter 48.000
-double: 48
-char: '0'
-int: 48
-float: 48
-sh-5.2$ ./ScalarConverter 48.000f
-float: 48f
-char: '0'
-int: 48
-double: 48
-sh-5.2$ ./ScalarConverter 48.002f
-float: 48.002f
-char: '0'
-int: 48
-double: 48.002
-sh-5.2$ ./ScalarConverter 48.002^C*/
