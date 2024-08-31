@@ -13,7 +13,7 @@ These cpp modules are from the [42](https://42.fr) cursus!
 | CPP_04 | Subtype polymorphism, abstract classes, interfaces, The diamond problem | 80/100 ✅ |
 | CPP_05 | Templates, Exception handling, and Operator overloading, Member Function | 100/100 ✅ |
 | CPP_06 | Static casting, Dynamic casting, Conversion of scalar types, Serialization and reinterpret casting | 100/100 ✅ |
-| CPP_07 | Function templates, and Class templates | ⏳ ⏳ ⏳ |
+| CPP_07 | Function templates, and Class templates | 100/100 ✅ |
 | CPP_08 | STL & STL containers:(list, vector, map, stack), iterators & iterators adapters, and algorithms  | ⏳ ⏳ ⏳ |
 | CPP_09 | Same shit as CPP_08 (CPP_08 Part II) | NOT YET ⏳ |
 
