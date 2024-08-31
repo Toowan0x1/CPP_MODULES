@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oel-houm <oel-houm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: oel-houm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 22:42:46 by oel-houm          #+#    #+#             */
-/*   Updated: 2024/08/29 22:42:46 by oel-houm         ###   ########.fr       */
+/*   Created: 2024/08/31 16:55:20 by oel-houm          #+#    #+#             */
+/*   Updated: 2024/08/31 16:55:23 by oel-houm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-#define BASE_HPP
+#include "Base.hpp"
 
-class Base {
-    public:
-        virtual ~Base();
-};
+Base::~Base() {}
 
-#endif 

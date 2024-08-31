@@ -10,25 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
-#include "Identify.cpp"
+#include "Identify.hpp"
 
 int main() {
     srand(static_cast<unsigned int>(time(0)));
 
     Base* base = generate();
-    identify(base);
-    identify(*base);
+    // Identify(base);
+    Identify(*base); // Correct: Pass a reference to Identify()
 
-    delete base;
+    delete base; // Clean up
 
     return 0;
 }
-Base.hpp: Defines the Base class with a public virtual destructor.
-A.hpp, B.hpp, C.hpp: Define empty classes A, B, and C that inherit from Base.
-Identify.cpp: Implements the generate() function to randomly instantiate A, B, or C. It also implements identify(Base* p) and identify(Base& p) to identify the actual type of the object.
-Main.cpp: Tests the implementation by generating a random object and identifying its type.
-*/

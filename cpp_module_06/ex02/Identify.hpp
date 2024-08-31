@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   Identify.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oel-houm <oel-houm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: oel-houm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 22:42:46 by oel-houm          #+#    #+#             */
-/*   Updated: 2024/08/29 22:42:46 by oel-houm         ###   ########.fr       */
+/*   Created: 2024/08/31 16:45:47 by oel-houm          #+#    #+#             */
+/*   Updated: 2024/08/31 16:45:48 by oel-houm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-#define BASE_HPP
+#ifndef IDENTIFY_HPP
+#define IDENTIFY_HPP
 
-class Base {
-    public:
-        virtual ~Base();
-};
+#include "Base.hpp"
 
-#endif 
+class Base;
+
+Base*   generate();
+void    Identify(Base& p);
+
+#endif
+
