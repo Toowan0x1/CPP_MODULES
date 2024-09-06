@@ -47,10 +47,6 @@ class Form {
         // Exceptions
         class GradeTooHighException : public std::exception {
             public:
-                virtual c.
-        }
-        class GradeTooHighException : public std::exception {
-            public:
                 const char* what() const throw();
         };
 
