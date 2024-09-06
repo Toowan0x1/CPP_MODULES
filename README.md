@@ -8,9 +8,9 @@ These cpp modules are from the [42](https://42.fr) cursus!
 | ------ | ------ | ------ |
 | CPP_00 | namespaces, classes, accessors/getters, and C++ string manipulation | 100% ✅ |
 | CPP_01 | Pointers, & File streams | 100% ✅ |
-| CPP_02 | Orthodox canonical form, Operator overloading & Fixed point numbers |   80% ✅ |
-| CPP_03 | Inheretence, Multiple inheretence, Polymorphism, Constructor Chaining, Access specifier (Base class & Class members) |   80% ✅ |
-| CPP_04 | Subtype polymorphism, abstract classes, interfaces, The diamond problem |  80% ✅ |
+| CPP_02 | Orthodox canonical form, Operator overloading & Fixed point numbers | 80%  ✅ |
+| CPP_03 | Inheretence, Multiple inheretence, Polymorphism, Constructor Chaining, Access specifier (Base class & Class members) | 80%  ✅  |
+| CPP_04 | Subtype polymorphism, abstract classes, interfaces, The diamond problem | 80%  ✅ |
 | CPP_05 | Templates, Exception handling, and Operator overloading, Member Function | 100% ✅ |
 | CPP_06 | Static casting, Dynamic casting, Conversion of scalar types, Serialization and reinterpret casting | 100% ✅ |
 | CPP_07 | Function templates, and Class templates | 100% ✅ |
