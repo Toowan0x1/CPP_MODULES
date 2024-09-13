@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 CXX = c++
-CXXFLAGS = -std=c++11 -Wall -Wextra -Werror
+CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 LDFLAGS =
 
 SRC_DIR = .
