@@ -14,7 +14,14 @@
 #define SERIALIZER_HPP
 
 #include "Data.hpp"
-#include <cstdint> // For uintptr_t
+// #include <cstdint> // For uintptr_t
+
+// Manual definition of uintptr_t for C++98
+#if __SIZEOF_POINTER__ == 8
+    typedef unsigned long uintptr_t;
+#else
+    typedef unsigned int uintptr_t;
+#endif
 
 class Serializer {
     public:
