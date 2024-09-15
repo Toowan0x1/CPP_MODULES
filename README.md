@@ -1,5 +1,6 @@
 ## CPP_MODULES
 
+My solution for CPP Module 06 of the Common core of 42 school.
 These cpp modules are from the [42](https://42.fr) cursus!
 
 ## List of all my cpp-modules
@@ -14,6 +15,13 @@ These cpp modules are from the [42](https://42.fr) cursus!
 - [cpp_module_07](https://github.com/toowan0x1/cpp_module_07)
 - [cpp_module_08](https://github.com/toowan0x1/cpp_module_08)
 - [cpp_module_09](https://github.com/toowan0x1/cpp_module_09)
+
+All of those exercises are compilable with the `-std=c++98-flag`, since this was a requirement for this project.<br>
+All exercises where compiled and tested on `macOS Catalina 10.15.7` and `Ubuntu 20.04.4 LTS`.
+
+All exercises can be compiled from the root of the exercise with `make`, `make all` or `make re`.<br>
+All exercises have a main function to demonstrate all the abilities of the subject.<br>
+After that, run the created executable like `./executable_to_run` (ie. ex00 `./convert <some_input_to_convert>`).<br>
 
 ### List of all my cpp modules
 
