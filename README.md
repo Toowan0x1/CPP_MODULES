@@ -1,6 +1,6 @@
 ## CPP_MODULES
 
-My solution for CPP Module 06 of the Common core of 42 school.
+My solution for CPP Module 06 of the Common core of 42 school.<br>
 These cpp modules are from the [42](https://42.fr) cursus!
 
 ## List of all my cpp-modules
