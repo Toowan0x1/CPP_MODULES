@@ -1,7 +1,6 @@
 ## CPP_MODULES
 
-My solution for CPP Module 06 of the Common core of 42 school.<br>
-These cpp modules are from the [42](https://42.fr) cursus!
+My solution for CPP Modules of the Common core of [42 school](https://42.fr).
 
 ## List of all my cpp-modules
 
@@ -33,6 +32,6 @@ All exercises have a main function to demonstrate all the abilities of the subje
 | CPP_08 | STL & STL containers:(list, vector, map, stack), iterators & iterators adapters, and algorithms  | 100% ✅ |
 | CPP_09 | Same shit as CPP_08 (CPP_08 Part II) | ⏳ ⏳ ⏳ |
 
-Please don't copy paste any code if you are a fellow student.
+Please don't copy paste any code if you are a fellow student.<br>
 Feel free to contact me if you have any questions. Thank you!
 
