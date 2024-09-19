@@ -27,6 +27,7 @@ class ScalarConverter {
         ScalarConverter& operator=(const ScalarConverter& rhs);
         ~ScalarConverter();
 
+        static bool checkPseudoLiterals(const std::string& literal);
         static void fromChar(const std::string& literal);
         static void fromInt(const std::string& literal);
         static void fromFloat(const std::string& literal);

@@ -17,7 +17,6 @@
 #include <cmath>
 #include <cerrno>
 
-
 /* ******************** Constructors & Destructor ******************** */
 ScalarConverter::ScalarConverter() {}
 ScalarConverter::ScalarConverter(const ScalarConverter&) {}
@@ -26,9 +25,30 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter&) {
 }
 ScalarConverter::~ScalarConverter() {}
 
-
+bool ScalarConverter::checkPseudoLiterals(const std::string& literal) {
+    // 
+    for (int i = 0; i < 3; ++i) {
+        if (literal == "+inf" || literal == "-inf" || literal == "nan") {
+            fromDouble(literal);
+            return true;
+        }
+    }
+    
+    // 
+    for (int i = 0; i < 3; ++i) {
+        if (literal == "+inff" || literal == "-inff" || literal == "nanf") {
+            fromFloat(literal);
+            return true;
+        }
+    }
+    return false;
+}
 /* ******************** ScalarConverter Functions ******************** */
 void    ScalarConverter::convert(const std::string& literal) {
+    if (checkPseudoLiterals(literal)) {
+        return;
+    }
+
     if (literal.length() == 1 && !isdigit(literal[0])) {
         fromChar(literal);
     }
@@ -75,9 +95,17 @@ void    ScalarConverter::fromInt(const std::string& literal) {
     }
 }
 
-void    ScalarConverter::fromFloat(const std::string& literal) {
-    float fValue = strtof(literal.c_str(), NULL);
 
+void    ScalarConverter::fromFloat(const std::string& literal) {
+    if (literal == "+inff" || literal == "-inff" || literal == "nanf") {
+        std::cout << "float: " << literal << std::endl;
+        std::cout << "double: " << literal.substr(0, literal.length() - 1) << std::endl;
+        std::cout << "char: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+        return;
+    }
+
+    float fValue = strtof(literal.c_str(), NULL);
     if (errno == ERANGE || !std::isfinite(fValue)) {
         std::cout << "float: impossible" << std::endl;
     }
@@ -100,7 +128,44 @@ void    ScalarConverter::fromFloat(const std::string& literal) {
         std::cout << "double: " << static_cast<double>(fValue) << std::endl;
     }
 }
+/*
+void ScalarConverter::fromFloat(const std::string& literal) {
+    float fValue = strtof(literal.c_str(), NULL);
 
+    // Check for pseudo-literals
+    if (literal == "+inff" || literal == "-inff" || literal == "nanf") {
+        std::cout << "float: " << literal << std::endl;
+        std::cout << "double: " << static_cast<double>(fValue) << std::endl;
+        std::cout << "char: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+        return;
+    }
+
+    // Check for range and validity
+    if (errno == ERANGE || !std::isfinite(fValue)) {
+        std::cout << "float: impossible" << std::endl;
+        return;
+    }
+    
+    std::cout << "float: " << fValue << "f" << std::endl;
+
+    if (fValue < std::numeric_limits<char>::min() || fValue > std::numeric_limits<char>::max() ||
+        !isprint(static_cast<int>(fValue))) {
+        std::cout << "char: Non displayable" << std::endl;
+    } else {
+        std::cout << "char: '" << static_cast<char>(fValue) << "'" << std::endl;
+    }
+
+    if (fValue < std::numeric_limits<int>::min() || fValue > std::numeric_limits<int>::max()) {
+        std::cout << "int: impossible" << std::endl;
+    } else {
+        std::cout << "int: " << static_cast<int>(fValue) << std::endl;
+    }
+
+    std::cout << "double: " << static_cast<double>(fValue) << std::endl;
+}*/
+
+/*
 void    ScalarConverter::fromDouble(const std::string& literal) {
     double dValue = std::strtod(literal.c_str(), NULL);
 
@@ -125,4 +190,40 @@ void    ScalarConverter::fromDouble(const std::string& literal) {
         }
         std::cout << "float: " << static_cast<float>(dValue) << std::endl;
     }
+}
+*/
+void ScalarConverter::fromDouble(const std::string& literal) {
+    double dValue = std::strtod(literal.c_str(), NULL);
+
+    // Check for pseudo-literals
+    if (literal == "+inf" || literal == "-inf" || literal == "nan") {
+        std::cout << "double: " << literal << std::endl;
+        std::cout << "float: " << static_cast<float>(dValue) << "f" << std::endl;
+        std::cout << "char: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+        return;
+    }
+
+    // Check for range and validity
+    if (errno == ERANGE || !std::isfinite(dValue)) {
+        std::cout << "double: impossible" << std::endl;
+        return;
+    }
+
+    std::cout << "double: " << dValue << std::endl;
+
+    if (dValue < std::numeric_limits<char>::min() || dValue > std::numeric_limits<char>::max() ||
+        !isprint(static_cast<int>(dValue))) {
+        std::cout << "char: Non displayable" << std::endl;
+    } else {
+        std::cout << "char: '" << static_cast<char>(dValue) << "'" << std::endl;
+    }
+
+    if (dValue < std::numeric_limits<int>::min() || dValue > std::numeric_limits<int>::max()) {
+        std::cout << "int: impossible" << std::endl;
+    } else {
+        std::cout << "int: " << static_cast<int>(dValue) << std::endl;
+    }
+
+    std::cout << "float: " << static_cast<float>(dValue) << "f" << std::endl;
 }
