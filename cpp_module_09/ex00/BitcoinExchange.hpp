@@ -1,32 +1,24 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: oel-houm <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/06 16:22:18 by oel-houm          #+#    #+#             */
-/*   Updated: 2024/12/06 16:57:09 by oel-houm         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#ifndef BITCOIN_EXCHANGE
+#define BITCOIN_EXCHANGE
 
-#ifndef // BITCOINEXCHANGE_HPP
-#define // BITCOINEXCHANGE_HPP
-
-#include <map>
-#include <string>
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <string>
+#include <map>
+#include <stdexcept>
 
 class BitcoinExchange {
-	private:
-		std::map<string, float> exchangeRates;
-	public:
-		BitcoinExchange(const std::string& dbFile);
-		float getRate();
-		void loadDatabase();
+    private:
+        std::map<std::string, double> _exchangeRates;
+        void    loadDatabse(std::string const & databaseFile);
+        double  getExchangeRate(std::string const & date) const;
+        bool    isValidValue(std::string const & value) const;
+        bool    isValidDate(std::string const & date) const;
+    public:
+        BitcoinExchange(std::string const & databaseFile);
+        ~BitcoinExchange();
+        void    processInputFile(std::string const & inputFile) const;
 };
 
 #endif
-
