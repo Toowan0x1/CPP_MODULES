@@ -30,8 +30,4 @@ All exercises have a main function to demonstrate all the abilities of the subje
 | CPP_06 | Static casting, Dynamic casting, Conversion of scalar types, Serialization and reinterpret casting | 100% ✅ |
 | CPP_07 | Function templates, and Class templates | 100% ✅ |
 | CPP_08 | STL, STL containers:(list, vector, map, stack), iterators & iterators adapters, and algorithms  | 100% ✅ |
-| CPP_09 |  | 100% ✅ |
-
-Please don't copy paste any code if you are a fellow student.<br>
-Feel free to contact me if you have any questions. Thank you!
-
+| CPP_09 | Parsing using STL containers, and Algorithms | 100% ✅ |
